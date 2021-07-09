@@ -10,6 +10,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String result = "Loose";
+  int score = 80;
   ConfettiController _controllerCenterRight =
       ConfettiController(duration: const Duration(seconds: 10));
 
@@ -63,88 +65,93 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Container(
           margin: EdgeInsets.only(top: 5),
           width: double.infinity,
-          child: Stack(children: [
-            Container(
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    "Name",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.red.withOpacity(0.8),
-                          spreadRadius: 10,
-                          blurRadius: 5,
-                          offset: Offset(0, 7),
-                        ),
-                      ],
-                    ),
-                    child: Transform.scale(
-                      scale: 4,
-                      child: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            "https://avatars.githubusercontent.com/u/87115354?v=4"),
+          child: Stack(
+            children: [
+              Container(
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Name",
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                  Text(
-                    "Winner!!!",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "Credited with Rupees 100",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 80),
-                      child: Text("Button"),
+                    
+                    Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.red.withOpacity(0.8),
+                            spreadRadius: 10,
+                            blurRadius: 5,
+                            offset: Offset(0, 7),
+                          ),
+                        ],
+                      ),
+                      child: Transform.scale(
+                        scale: 4,
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                              "https://avatars.githubusercontent.com/u/87115354?v=4"),
+                        ),
+                      ),
                     ),
-                  )
-                ],
+                    Text(
+                      "Winner!!!",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "Credited with Rupees 100",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 80),
+                        child: Text("Button"),
+                      ),
+                    )
+                  ],
+                ),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.fromLTRB(mediaQuery, 60, 0, 0),
-              child: ConfettiWidget(
-                confettiController: _controllerCenterRight,
-                blastDirectionality: BlastDirectionality.explosive,
-                // don't specify a direction, blast randomly
-                // start again as soon as the animation is finished
-                colors: const [
-                  Colors.greenAccent,
-                  Colors.blueAccent,
-                  Colors.pinkAccent,
-                  Colors.orangeAccent,
-                  Colors.purpleAccent,
-                  Colors.black,
-                  Colors.grey,
-                  Colors.redAccent,
-                  Colors.amberAccent,
-                  Colors.cyanAccent
-                ], // manually specify the colors to be used
-                // createParticlePath: drawStar, // define a custom shape/path.
+              Container(
+                padding: EdgeInsets.fromLTRB(mediaQuery, 60, 0, 0),
+                child: ConfettiWidget(
+                  confettiController: _controllerCenterRight,
+                  blastDirectionality: BlastDirectionality.explosive,
+                  // don't specify a direction, blast randomly
+                  // start again as soon as the animation is finished
+                  colors: const [
+                    Colors.greenAccent,
+                    Colors.blueAccent,
+                    Colors.pinkAccent,
+                    Colors.orangeAccent,
+                    Colors.purpleAccent,
+                    Colors.black,
+                    Colors.grey,
+                    Colors.redAccent,
+                    Colors.amberAccent,
+                    Colors.cyanAccent
+                  ], // manually specify the colors to be used
+                  // createParticlePath: drawStar, // define a custom shape/path.
 
-                shouldLoop: true,
-                emissionFrequency: 0.05,
-                numberOfParticles: 5,
-                gravity: 0.2,
-                maxBlastForce: 2,
-                minBlastForce: 1,
-                particleDrag: 0.1,
+                  shouldLoop: true,
+                  emissionFrequency: 0.05,
+                  numberOfParticles: 10,
+                  gravity: 0.2,
+                  maxBlastForce: 2,
+                  minBlastForce: 1,
+                  particleDrag: 0.1,
+                ),
               ),
-            ),
-          ]),
+            ],
+          ),
         ),
       ),
     );
