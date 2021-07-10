@@ -11,7 +11,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String result = "Loose";
-  int score = 80;
+  // int score = 80;
   ConfettiController _controllerCenterRight =
       ConfettiController(duration: const Duration(seconds: 10));
 
@@ -80,7 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    
                     Container(
                       decoration: BoxDecoration(
                         boxShadow: [
@@ -120,6 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
+              
               Container(
                 padding: EdgeInsets.fromLTRB(mediaQuery, 60, 0, 0),
                 child: ConfettiWidget(
